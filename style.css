@@ -1,0 +1,139 @@
+:root{
+    /*Variare solo questi parametri*/
+    --cell-num:16;
+    /* --snake-color:rgb(35, 241, 16); */
+    --snake-color:gold;
+    /* --snake-color:rgb(36, 172, 23); */
+    --apple-color:rgb(226, 46, 46);
+
+    --grid-size:450px;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+body{
+    background-color:black;
+    font-family: 'Poppins', sans-serif;
+    color:white;
+}
+.heading{
+    
+ /*   border:4px dashed red;*/
+    margin: 0 auto;
+    margin-bottom:25px;
+    margin-top:10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    font-size: 50px;
+}
+p{
+    font-size:20px;
+}
+
+.gameArea{
+
+    
+   /* border:2px dashed blue;*/
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    position:relative;
+}
+.gameData{
+   /* border:2px dashed orange;*/
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.dati{
+    margin-left:20px;
+    font-size: 30px;
+}
+.grid{
+    width:var(--grid-size);
+    height:var(--grid-size);
+    
+    margin-right: 20px;
+    background-color: black;
+    box-sizing:content-box;
+    border: 2px solid white;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.cell{
+    width: calc(var(--grid-size)/var(--cell-num));
+    height:calc(var(--grid-size)/var(--cell-num));
+
+    border: 0.5px dashed rgb(19, 19, 19);
+}
+.apple{
+   /* background-color: var(--apple-color);*/
+   background-image: url("mela.png");
+   background-size: contain;
+}
+.activeCell{
+    background-color: var(--snake-color);
+    border: 0.5px solid var(--snake-color);
+
+    /* border: 8px solid var(--snake-color);
+    background-color: green; */
+
+    /* background-image: url("snakeskin2.png");
+    background-size: contain; */
+}
+/* .headCell{
+    background-color: white;
+} */
+.game-alert{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.game-alert-message{
+    padding-top:15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 40px;
+    height: 100px;
+    width: 80%;
+    background-color: rgba(0, 0, 0);
+    border:3px solid white;
+    text-align: center;
+}
+.rigioca{
+    padding-top:15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 40px;
+    height: 100px;
+    width: 80%;
+    background-color: rgba(0, 0, 0);
+    border-bottom:3px solid white;
+    border-left:3px solid white;
+    border-right:3px solid white;
+    text-align: center;
+    color: var(--snake-color);
+    cursor: pointer;
+}
+.rigioca:hover{
+    color:var(--apple-color);
+}

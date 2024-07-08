@@ -1,0 +1,2 @@
+parametri standard:griglia 16x16, 160ms intervallo
+record tubo: 196
