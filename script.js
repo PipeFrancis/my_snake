@@ -56,7 +56,7 @@ function activateCell(cellX,cellY,snakeLength){
     
     if(cells[cellIndex].classList.contains("activeCell")){
         console.log("game over");
-        showAlert(`Game over! Lunghezza: ${currentLength}`);
+        showAlert(`Game over! L: ${currentLength}`);
         clearInterval(snakeMovement);
     }
     cells[cellIndex].classList.add("activeCell");
@@ -182,7 +182,7 @@ function showAlert(message) {
     const gameArea = document.querySelector('.gameArea');
     const alertMessage = `
     <div class="game-alert">
-        <div class="game-alert-message">${message} <br> Tempo: ${finalTime}</div>  
+        <div class="game-alert-message">${message} Tempo: ${finalTime}</div>  
         <div class="rigioca">Rigioca</div>     
     </div>
     `;
