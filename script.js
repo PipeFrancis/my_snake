@@ -176,18 +176,20 @@ function placeApple(){
     }
 }
 
-function showAlert(message){
+function showAlert(message) {
     stopTimer(); // Ferma il timer quando il gioco termina
+    const finalTime = document.getElementById("timer").innerText; // Ottieni il tempo finale
     const gameArea = document.querySelector('.gameArea');
     const alertMessage = `
     <div class="game-alert">
-        <div class="game-alert-message">${message}</div>  
+        <div class="game-alert-message">${message} <br> Tempo: ${finalTime}</div>  
         <div class="rigioca">Rigioca</div>     
     </div>
     `;
     gameArea.innerHTML = gameArea.innerHTML + alertMessage;
-    document.querySelector(".rigioca").addEventListener("click",reloadPage);
+    document.querySelector(".rigioca").addEventListener("click", reloadPage);
 }
+
 
 function reloadPage(){
     window.location.reload();
