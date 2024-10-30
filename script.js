@@ -177,6 +177,7 @@ function placeApple(){
 }
 
 function showAlert(message){
+    stopTimer(); // Ferma il timer quando il gioco termina
     const gameArea = document.querySelector('.gameArea');
     const alertMessage = `
     <div class="game-alert">
@@ -191,3 +192,27 @@ function showAlert(message){
 function reloadPage(){
     window.location.reload();
 }
+
+
+let secondsElapsed = 0;
+let timerInterval;
+
+function startTimer() {
+    timerInterval = setInterval(() => {
+        secondsElapsed++;
+        displayTime();
+    }, 1000);
+}
+
+function displayTime() {
+    const minutes = Math.floor(secondsElapsed / 60);
+    const seconds = secondsElapsed % 60;
+    document.getElementById("timer").innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+}
+
+function stopTimer() {
+    clearInterval(timerInterval);
+}
+
+// Avvia il timer quando inizia il movimento del serpente
+startTimer();
