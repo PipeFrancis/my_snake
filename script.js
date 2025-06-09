@@ -83,52 +83,52 @@ function activateCell(cellX,cellY,snakeLength){
 }
 
 //usare la seguente funzione per effetto pacman attivo
-function moveHead(direction, length){
-    switch(direction){
-        case "up":
-            headY++;
-            if(headY==cellNum+1) {headY=1;}
-            break;            
-        case "down":
-            headY--;
-            if(headY==0) {headY=cellNum;}
-            break;
-        case "left":
-            headX--;
-            if(headX==0) {headX=cellNum;}
-            break;
-        case "right":
-            headX++;
-            if(headX==cellNum+1) {headX=1;}
-            break;
-    }
-    activateCell(headX,headY,length);
-}
-
-//usare la seguente funzione per effetto pacman non attivo
 // function moveHead(direction, length){
 //     switch(direction){
 //         case "up":
 //             headY++;
+//             if(headY==cellNum+1) {headY=1;}
 //             break;            
 //         case "down":
 //             headY--;
+//             if(headY==0) {headY=cellNum;}
 //             break;
 //         case "left":
 //             headX--;
+//             if(headX==0) {headX=cellNum;}
 //             break;
 //         case "right":
 //             headX++;
+//             if(headX==cellNum+1) {headX=1;}
 //             break;
-//     }
-//     if(headY==cellNum+1 || headY==0 || headX==0 || headX==cellNum+1)
-//     {
-//         clearInterval(snakeMovement);
-//         showAlert(`Game over!   Lunghezza: ${currentLength}`);
-//         return;
 //     }
 //     activateCell(headX,headY,length);
 // }
+
+//usare la seguente funzione per effetto pacman non attivo
+function moveHead(direction, length){
+    switch(direction){
+        case "up":
+            headY++;
+            break;            
+        case "down":
+            headY--;
+            break;
+        case "left":
+            headX--;
+            break;
+        case "right":
+            headX++;
+            break;
+    }
+    if(headY==cellNum+1 || headY==0 || headX==0 || headX==cellNum+1)
+    {
+        clearInterval(snakeMovement);
+        showAlert(`Game over!   Lunghezza: ${currentLength}`);
+        return;
+    }
+    activateCell(headX,headY,length);
+}
 
 function changeDirection(event){
     if(directionFlag===0){
